@@ -1,0 +1,27 @@
+name: "CI examples"
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - README.md
+      - LICENSE
+  pull_request:
+    branches: [ main ]
+    paths-ignore:
+      - README.md
+      - LICENSE
+
+env:
+  DEVELOPER_DIR: /Applications/Xcode_15.3.app
+
+jobs:
+  build:
+    runs-on: macos-14
+    defaults:
+      run:
+        working-directory: Examples
+    steps:
+    - uses: actions/checkout@v4
+    - name: Xcode build
+      run: make build-debug

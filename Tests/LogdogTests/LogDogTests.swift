@@ -1,7 +1,7 @@
 import XCTest
-@testable import LogDog
+@testable import Logdog
 
-final class LogDogTests: XCTestCase {
+final class LogdogTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest
