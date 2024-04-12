@@ -1,2 +1,7 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
+public final class LogDog {
+    public init() {}
+
+    public func hello() {
+        print("Hello, LogDog!")
+    }
+}

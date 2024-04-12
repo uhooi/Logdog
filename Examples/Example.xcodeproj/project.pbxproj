@@ -11,6 +11,7 @@
 		4BB8E5802BC975E900B9E04E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8E57F2BC975E900B9E04E /* ContentView.swift */; };
 		4BB8E5822BC975EB00B9E04E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BB8E5812BC975EB00B9E04E /* Assets.xcassets */; };
 		4BB8E5852BC975EB00B9E04E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BB8E5842BC975EB00B9E04E /* Preview Assets.xcassets */; };
+		4BB8E58F2BC9796E00B9E04E /* LogDog in Frameworks */ = {isa = PBXBuildFile; productRef = 4BB8E58E2BC9796E00B9E04E /* LogDog */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		4BB8E57F2BC975E900B9E04E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4BB8E5812BC975EB00B9E04E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BB8E5842BC975EB00B9E04E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4BB8E58C2BC9795A00B9E04E /* Logdog */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Logdog; path = ../..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BB8E58F2BC9796E00B9E04E /* LogDog in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -35,8 +38,10 @@
 		4BB8E5712BC975E900B9E04E = {
 			isa = PBXGroup;
 			children = (
+				4BB8E58B2BC9794500B9E04E /* Packages */,
 				4BB8E57C2BC975E900B9E04E /* Example */,
 				4BB8E57B2BC975E900B9E04E /* Products */,
+				4BB8E58D2BC9796E00B9E04E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +72,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		4BB8E58B2BC9794500B9E04E /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				4BB8E58C2BC9795A00B9E04E /* Logdog */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		4BB8E58D2BC9796E00B9E04E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,6 +103,9 @@
 			dependencies = (
 			);
 			name = Example;
+			packageProductDependencies = (
+				4BB8E58E2BC9796E00B9E04E /* LogDog */,
+			);
 			productName = Example;
 			productReference = 4BB8E57A2BC975E900B9E04E /* Example.app */;
 			productType = "com.apple.product-type.application";
@@ -345,6 +368,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4BB8E58E2BC9796E00B9E04E /* LogDog */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LogDog;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4BB8E5722BC975E900B9E04E /* Project object */;
 }
