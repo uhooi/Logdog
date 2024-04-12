@@ -12,6 +12,7 @@
 		4BB8E5822BC975EB00B9E04E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BB8E5812BC975EB00B9E04E /* Assets.xcassets */; };
 		4BB8E5852BC975EB00B9E04E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BB8E5842BC975EB00B9E04E /* Preview Assets.xcassets */; };
 		4BB8E5912BC97D2C00B9E04E /* Logdog in Frameworks */ = {isa = PBXBuildFile; productRef = 4BB8E5902BC97D2C00B9E04E /* Logdog */; };
+		4BB8E5932BC981DC00B9E04E /* LogdogUI in Frameworks */ = {isa = PBXBuildFile; productRef = 4BB8E5922BC981DC00B9E04E /* LogdogUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BB8E5932BC981DC00B9E04E /* LogdogUI in Frameworks */,
 				4BB8E5912BC97D2C00B9E04E /* Logdog in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +107,7 @@
 			name = Example;
 			packageProductDependencies = (
 				4BB8E5902BC97D2C00B9E04E /* Logdog */,
+				4BB8E5922BC981DC00B9E04E /* LogdogUI */,
 			);
 			productName = Example;
 			productReference = 4BB8E57A2BC975E900B9E04E /* Example.app */;
@@ -373,6 +376,10 @@
 		4BB8E5902BC97D2C00B9E04E /* Logdog */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Logdog;
+		};
+		4BB8E5922BC981DC00B9E04E /* LogdogUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LogdogUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

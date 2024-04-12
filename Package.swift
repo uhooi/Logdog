@@ -15,12 +15,18 @@ let package = Package(
         .library(
             name: "Logdog",
             targets: ["Logdog"]),
+        .library(
+            name: "LogdogUI",
+            targets: ["LogdogUI"]),
     ],
     dependencies: [
     ],
     targets: [
         .target(
             name: "Logdog"),
+        .target(
+            name: "LogdogUI",
+            dependencies: ["Logdog"]),
         .testTarget(
             name: "LogdogTests",
             dependencies: ["Logdog"]),
