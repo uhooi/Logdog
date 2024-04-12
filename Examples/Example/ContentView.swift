@@ -1,5 +1,5 @@
 import SwiftUI
-import LogDog
+import Logdog
 
 struct ContentView: View {
     var body: some View {
@@ -11,7 +11,7 @@ struct ContentView: View {
         }
         .padding()
         .onAppear {
-            LogDog().hello()
+            Logdog().hello()
         }
     }
 }

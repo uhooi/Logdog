@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "LogDog",
+    name: "Logdog",
     platforms: [
             .iOS(.v16),
             .macOS(.v13),
@@ -13,16 +13,16 @@ let package = Package(
         ],
     products: [
         .library(
-            name: "LogDog",
-            targets: ["LogDog"]),
+            name: "Logdog",
+            targets: ["Logdog"]),
     ],
     dependencies: [
     ],
     targets: [
         .target(
-            name: "LogDog"),
+            name: "Logdog"),
         .testTarget(
-            name: "LogDogTests",
-            dependencies: ["LogDog"]),
+            name: "LogdogTests",
+            dependencies: ["Logdog"]),
     ]
 )
