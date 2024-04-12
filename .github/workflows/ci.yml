@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - Examples/**
+      - README.md
+      - LICENSE
+  pull_request:
+    branches: [ main ]
+    paths-ignore:
+      - Examples/**
+      - README.md
+      - LICENSE
+
+jobs:
+  run-macos:
+    name: ${{ matrix.subcommand }} with Xcode ${{ matrix.xcode }} on macOS
+    runs-on: macos-14
+    strategy:
+      matrix:
+        xcode: ["15.3"]
+        subcommand: ["Build", "Test"]
+    steps:
+    - uses: actions/checkout@v4
+    - name: ${{ matrix.subcommand }}
+      run: |
+        xcodebuild -version
+        swift --version
+        swift package --version
+        subcommand=`echo ${{ matrix.subcommand }} | tr '[:upper:]' '[:lower:]'`
+        swift $subcommand -v
+      env:
+        DEVELOPER_DIR: /Applications/Xcode_${{ matrix.xcode }}.app
+
+  run-ubuntu:
+    name: Build and Test with Swift ${{ matrix.swift }} on Ubuntu
+    runs-on: ubuntu-latest
+    container: swift:${{ matrix.swift }}
+    strategy:
+      matrix:
+        swift: ["5.10"]
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build and Test
+      run: |
+        swift --version
+        swift package --version
+        swift test -v
