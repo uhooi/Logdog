@@ -1,18 +1,9 @@
 import SwiftUI
-import Logdog
+import LogdogUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-        .onAppear {
-            Logdog().hello()
-        }
+        LogScreen()
     }
 }
 
