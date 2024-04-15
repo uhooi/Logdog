@@ -13,6 +13,11 @@ TEST_DESTINATION := 'generic/platform=$(TEST_PLATFORM)'
 
 # Targets
 
+.PHONY: resolve-package-dependencies
+resolve-package-dependencies:
+	xcodebuild \
+-resolvePackageDependencies
+
 .PHONY: build-debug
 build-debug:
 	xcodebuild \
