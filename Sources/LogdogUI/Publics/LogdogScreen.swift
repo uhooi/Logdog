@@ -2,7 +2,7 @@ import SwiftUI
 import Logdog
 
 /// ログ一覧画面
-public struct LogScreen: View {
+public struct LogdogScreen: View {
     @State private var entries: [LogEntry] = []
     @State private var subsystems: Set<String> = []
     @State private var subsystemSearchScope: SubsystemSearchScope = .all
@@ -171,7 +171,7 @@ private enum CategorySearchScope: Hashable {
     }
 }
 
-private extension LogScreen {
+private extension LogdogScreen {
     private var filteredEntries: [LogEntry] {
         let filteredEntries: [LogEntry] = entries
             .filter {
@@ -209,6 +209,6 @@ private extension LogScreen {
 
 #if DEBUG
 #Preview {
-    LogScreen()
+    LogdogScreen()
 }
 #endif
