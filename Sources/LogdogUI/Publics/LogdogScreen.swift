@@ -120,8 +120,6 @@ public struct LogdogScreen: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .navigationTitle(String(localized: "Log", bundle: .module))
-        .navigationBarTitleDisplayMode(.inline)
         .searchable(text: $query)
         .sheet(isPresented: $isSelectingMetadataToDisplayScreenPresented) {
         } content: {
@@ -209,6 +207,10 @@ private extension LogdogScreen {
 
 #if DEBUG
 #Preview {
-    LogdogScreen()
+    NavigationStack {
+        LogdogScreen()
+            .navigationTitle(String(localized: "Log", bundle: .module))
+            .navigationBarTitleDisplayMode(.inline)
+    }
 }
 #endif

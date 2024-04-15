@@ -1,0 +1,22 @@
+{
+  "sourceLanguage" : "ja",
+  "strings" : {
+    "Log" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ログ"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
