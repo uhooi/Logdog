@@ -23,7 +23,5 @@ jobs:
         working-directory: Examples
     steps:
     - uses: actions/checkout@v4
-    - name: Resolve package dependencies
-      run: make resolve-package-dependencies
     - name: Xcode build
       run: make build-debug
