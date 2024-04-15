@@ -1,9 +1,14 @@
 import Foundation
 import OSLog
 
+/// ログストア
 public actor LogStore {
-    public init () {}
+    /// イニシャライザ
+    public init() {}
 
+    /// ログエントリを取得する
+    ///
+    /// - Returns: ログエントリ
     public func entries() throws -> [LogEntry] {
         let store = try OSLogStore(scope: .currentProcessIdentifier)
         let position = store.position(timeIntervalSinceLatestBoot: 1)
