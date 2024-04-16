@@ -17,13 +17,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1138EF8F2BCED67D00DE45A5 /* Logdog */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Logdog; path = ..; sourceTree = "<group>"; };
 		4B8C4AA22BCD26FE00136CA8 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		4BB8E57A2BC975E900B9E04E /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BB8E57D2BC975E900B9E04E /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
 		4BB8E57F2BC975E900B9E04E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4BB8E5812BC975EB00B9E04E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BB8E5842BC975EB00B9E04E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		4BB8E58C2BC9795A00B9E04E /* Logdog */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Logdog; path = ../..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1138EF8E2BCED66A00DE45A5 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				1138EF8F2BCED67D00DE45A5 /* Logdog */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		4B8C4AA12BCD26E700136CA8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -50,7 +58,7 @@
 		4BB8E5712BC975E900B9E04E = {
 			isa = PBXGroup;
 			children = (
-				4BB8E58B2BC9794500B9E04E /* Packages */,
+				1138EF8E2BCED66A00DE45A5 /* Packages */,
 				4BB8E57C2BC975E900B9E04E /* Example */,
 				4BB8E57B2BC975E900B9E04E /* Products */,
 				4BB8E58D2BC9796E00B9E04E /* Frameworks */,
@@ -83,14 +91,6 @@
 				4BB8E5842BC975EB00B9E04E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		4BB8E58B2BC9794500B9E04E /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				4BB8E58C2BC9795A00B9E04E /* Logdog */,
-			);
-			path = Packages;
 			sourceTree = "<group>";
 		};
 		4BB8E58D2BC9796E00B9E04E /* Frameworks */ = {
