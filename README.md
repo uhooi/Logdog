@@ -1,4 +1,4 @@
-# Logdog
+# Logdog :dog:
 
 [![CI](https://github.com/uhooi/Logdog/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/uhooi/Logdog/actions/workflows/ci.yml)
 [![CI example](https://github.com/uhooi/Logdog/actions/workflows/ci-examples.yml/badge.svg?branch=main)](https://github.com/uhooi/Logdog/actions/workflows/ci-examples.yml)
@@ -20,7 +20,6 @@ OSログを確認するパッケージ。
 
 ## システム要件
 
-- Swift: 5.10+
 - Xcode: 15.3+
 - macOS: 14.0+
 
