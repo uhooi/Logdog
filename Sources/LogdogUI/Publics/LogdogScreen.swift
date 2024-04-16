@@ -170,7 +170,7 @@ private enum CategorySearchScope: Hashable {
 }
 
 private extension LogdogScreen {
-    private var filteredEntries: [LogEntry] {
+    var filteredEntries: [LogEntry] {
         let filteredEntries: [LogEntry] = entries
             .filter {
                 switch subsystemSearchScope {
@@ -192,12 +192,12 @@ private extension LogdogScreen {
         return trimmedQuery.isEmpty ? filteredEntries : filteredEntries.filter { $0.message.range(of: trimmedQuery, options: [.caseInsensitive, .diacriticInsensitive, .widthInsensitive]) != nil }
     }
 
-    private var sortedSubsystems: [String] {
+    var sortedSubsystems: [String] {
         Array(subsystems)
             .sorted { $0 < $1 }
     }
 
-    private var sortedCategories: [String] {
+    var sortedCategories: [String] {
         Array(categories)
             .sorted { $0 < $1 }
     }
