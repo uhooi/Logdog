@@ -102,7 +102,7 @@ public struct LogdogScreen: View {
                     ProgressView()
                 } else {
                     List {
-                        ForEach(filteredEntries, id: \.date) { entry in
+                        ForEach(filteredEntries) { entry in
                             LogRowView(
                                 entry: entry,
                                 shouldShowType: selectedMetadata.contains(.type),
