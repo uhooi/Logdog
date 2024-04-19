@@ -34,7 +34,7 @@ OSログをいい感じに表示するビューと、OSログを表示するた�
 ```swift
 let package = Package(
     dependencies: [
-        .package(url: "https://github.com/uhooi/Logdog", .upToNextMajor(from: "0.1.0")),
+        .package(url: "https://github.com/uhooi/Logdog", from: "0.1.0"),
     ],
     targets: [
         .target(
@@ -51,13 +51,13 @@ let package = Package(
 
 本パッケージはXcode上で追加できます。
 
-[ドキュメント](https://developer.apple.com/documentation/swift_packages/adding_package_dependencies_to_your_app) をご参照ください。
+詳細は [ドキュメント](https://developer.apple.com/documentation/swift_packages/adding_package_dependencies_to_your_app) をご参照ください。
 
 ## 使い方
 
 ### OSログの出力
 
-本パッケージはOSログを確認するために存在します。
+本パッケージはOSログを確認するために存在します。  
 そのため、まずはOSログを出力します。
 
 以下のようなラッパーを用意すると便利です。
@@ -103,7 +103,7 @@ struct ContentView: View {
 }
 ```
 
-たったこれだけです。
+`LogScreen()` を呼び出すだけです。超簡単です。
 
 #### ビューを自作する場合
 
