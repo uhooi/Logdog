@@ -103,7 +103,7 @@ struct ContentView: View {
 }
 ```
 
-`LogScreen()` を呼び出すだけです。超簡単です。
+`LogdogScreen()` を呼び出すだけです。超簡単です。
 
 #### ビューを自作する場合
 
