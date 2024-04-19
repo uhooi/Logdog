@@ -1,7 +1,9 @@
 import Foundation
 
 /// ログエントリ
-public struct LogEntry: Sendable {
+public struct LogEntry: Identifiable, Sendable {
+    public let id: UUID = .init()
+
     /// メッセージ
     public let message: String
 
