@@ -40,7 +40,7 @@ let package = Package(
             name: "<your-target-name>",
             dependencies: [
                 "Logdog", // ビューを自作する場合
-                "LogdogUI", // ビューを使用する場合
+                "LogdogUI", // ビューを使用する場合（オススメ）
             ]),
     ]
 )
