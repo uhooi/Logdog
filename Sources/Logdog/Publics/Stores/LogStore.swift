@@ -1,12 +1,12 @@
 import Foundation
 import OSLog
 
-/// ログストア
+/// ログストア。
 public actor LogStore {
-    /// イニシャライザ
+    /// イニシャライザ。
     public init() {}
 
-    /// ログエントリを取得する
+    /// ログエントリを取得する。
     ///
     /// - Returns: ログエントリ
     public func entries() throws -> [LogEntry] {

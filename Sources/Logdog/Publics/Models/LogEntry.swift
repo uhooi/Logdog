@@ -1,30 +1,30 @@
 import Foundation
 
-/// ログエントリ
+/// ログエントリ。
 public struct LogEntry: Identifiable, Sendable {
     public let id: UUID = .init()
 
-    /// メッセージ
+    /// メッセージ。
     public let message: String
 
-    /// 日時
+    /// 日時。
     public let date: Date
 
-    /// ライブラリ
+    /// ライブラリ。
     public let library: String
 
-    /// PID
+    /// PID。
     public let processIdentifier: String
 
-    /// TID
+    /// TID。
     public let threadIdentifier: String
 
-    /// カテゴリ
+    /// カテゴリ。
     public let category: String
 
-    /// サブシステム
+    /// サブシステム。
     public let subsystem: String
 
-    /// ログレベル
+    /// ログレベル。
     public let level: LogLevel
 }
