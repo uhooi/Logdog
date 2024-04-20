@@ -121,7 +121,7 @@ struct LogdogScreen: View {
 
     var body: some View {
         List {
-            ForEach(entries, id: \.date) { entry in
+            ForEach(entries) { entry in
                 Text(entry.message)
             }
         }
