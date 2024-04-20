@@ -39,8 +39,8 @@ let package = Package(
         .target(
             name: "<your-target-name>",
             dependencies: [
-                "LogdogUI", // ビューを使用する場合（オススメ）
-                "Logdog", // ビューを自作する場合
+                .product(name: "LogdogUI", package: "Logdog"), // ビューを使用する場合（オススメ）
+                .product(name: "Logdog", package: "Logdog"), // ビューを自作する場合
             ]),
     ]
 )
