@@ -120,7 +120,10 @@ public struct LogdogScreen: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .searchable(text: $query)
+        .searchable(
+            text: $query,
+            placement: .navigationBarDrawer(displayMode: .always)
+        )
         .sheet(isPresented: $isSelectingMetadataToDisplayScreenPresented) {
         } content: {
             NavigationStack {
