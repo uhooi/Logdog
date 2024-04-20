@@ -1,7 +1,7 @@
 import SwiftUI
 import Logdog
 
-/// ログ一覧画面
+/// ログ一覧画面。
 public struct LogdogScreen: View {
     @State private var entries: [LogEntry] = []
     @State private var subsystems: Set<String> = []

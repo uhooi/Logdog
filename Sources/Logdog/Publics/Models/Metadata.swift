@@ -1,21 +1,21 @@
-/// メタデータ
+/// メタデータ。
 public enum Metadata: CaseIterable, Identifiable, Sendable {
-    /// タイプ
+    /// タイプ。
     case type
 
-    /// タイムスタンプ
+    /// タイムスタンプ。
     case timestamp
 
-    /// ライブラリ
+    /// ライブラリ。
     case library
 
-    /// PID:TID
+    /// PID:TID。
     case pidAndTid
 
-    /// サブシステム
+    /// サブシステム。
     case subsystem
 
-    /// カテゴリ
+    /// カテゴリ。
     case category
 
     public var id: Self { self }
