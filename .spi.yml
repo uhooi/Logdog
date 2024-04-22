@@ -1,8 +1,5 @@
 version: 1
 builder:
   configs:
-  - platform: ios
-    scheme: Logdog
-  - platform: ios
-    scheme: LogdogUI
-  - documentation_targets: [Logdog, LogdogUI]
+    - documentation_targets: [Logdog, LogdogUI]
+      platform: ios
