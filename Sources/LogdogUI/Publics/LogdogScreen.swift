@@ -10,7 +10,7 @@ public struct LogdogScreen: View {
     @State private var categorySearchScope: CategorySearchScope = .all
     @State private var levelSearchScope: LogLevel = .undefined
     @State private var query = ""
-    @State private var isSelectingMetadataToDisplayScreenPresented = false // swiftlint:disable:this identifier_name
+    @State private var shouldShowMetadata = false
     @State private var selectedMetadata: Set<Metadata> = []
     @State private var isLoading = false
 
@@ -85,11 +85,34 @@ public struct LogdogScreen: View {
                     }
                 }
 
-                Button {
-                    isSelectingMetadataToDisplayScreenPresented = true
+                Menu {
+                    Toggle(
+                        String(localized: "Metadata", bundle: .module),
+                        isOn: $shouldShowMetadata
+                    )
+
+                    Divider()
+
+                    ForEach(Metadata.allCases) { metadata in
+                        Toggle(
+                            metadata.text,
+                            systemImage: metadata.iconName,
+                            isOn: .init(get: {
+                                selectedMetadata.contains(metadata)
+                            }, set: { newValue in
+                                if newValue {
+                                    selectedMetadata.insert(metadata)
+                                } else {
+                                    selectedMetadata.remove(metadata)
+                                }
+                            })
+                        )
+                    }
+                    .disabled(!shouldShowMetadata)
                 } label: {
                     Image(systemName: "switch.2") // swiftlint:disable:this accessibility_label_for_image
                 }
+                .menuActionDismissBehaviorDisabledIfAvailable()
             }
             .padding(.bottom, 8)
             .padding(.horizontal, 8)
@@ -105,12 +128,12 @@ public struct LogdogScreen: View {
                         ForEach(filteredEntries) { entry in
                             LogRowView(
                                 entry: entry,
-                                shouldShowType: selectedMetadata.contains(.type),
-                                shouldShowTimestamp: selectedMetadata.contains(.timestamp),
-                                shouldShowLigrary: selectedMetadata.contains(.library),
-                                shouldShowPidAndTid: selectedMetadata.contains(.pidAndTid),
-                                shouldShowSubsystem: selectedMetadata.contains(.subsystem),
-                                shouldShowCategory: selectedMetadata.contains(.category)
+                                shouldShowType: shouldShowMetadata && selectedMetadata.contains(.type),
+                                shouldShowTimestamp: shouldShowMetadata && selectedMetadata.contains(.timestamp),
+                                shouldShowLigrary: shouldShowMetadata && selectedMetadata.contains(.library),
+                                shouldShowPidAndTid: shouldShowMetadata && selectedMetadata.contains(.pidAndTid),
+                                shouldShowSubsystem: shouldShowMetadata && selectedMetadata.contains(.subsystem),
+                                shouldShowCategory: shouldShowMetadata && selectedMetadata.contains(.category)
                             )
                             .listRowBackground(entry.level.backgroundColor)
                         }
@@ -124,12 +147,6 @@ public struct LogdogScreen: View {
             text: $query,
             placement: .navigationBarDrawer(displayMode: .always)
         )
-        .sheet(isPresented: $isSelectingMetadataToDisplayScreenPresented) {
-        } content: {
-            NavigationStack {
-                SelectingMetadataScreen(selectedMetadata: $selectedMetadata)
-            }
-        }
         .task {
             isLoading = true
             do {
@@ -203,6 +220,17 @@ private extension LogdogScreen {
     var sortedCategories: [String] {
         Array(categories)
             .sorted { $0 < $1 }
+    }
+}
+
+private extension View {
+    @ViewBuilder
+    func menuActionDismissBehaviorDisabledIfAvailable() -> some View {
+        if #available(iOS 16.4, *) {
+            menuActionDismissBehavior(.disabled)
+        } else {
+            self
+        }
     }
 }
 
