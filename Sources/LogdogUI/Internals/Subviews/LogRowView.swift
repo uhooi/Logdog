@@ -95,6 +95,6 @@ private extension LogRowView {
             .foregroundStyle(.white)
             .padding(3)
             .background(entry.level.iconBackgroundColor)
-            .clipShape(RoundedRectangle(cornerRadius: 2))
+            .clipShape(.rect(cornerRadius: 2))
     }
 }
