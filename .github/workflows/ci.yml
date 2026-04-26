@@ -20,7 +20,7 @@ jobs:
     runs-on: macos-15
     strategy:
       matrix:
-        xcode: ["16.0"]
+        xcode: ["26.3"]
         subcommand: ["Build"]
     steps:
     - uses: actions/checkout@v4
