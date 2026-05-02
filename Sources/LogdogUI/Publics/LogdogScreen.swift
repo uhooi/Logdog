@@ -16,6 +16,14 @@ public struct LogdogScreen: View {
 
     private let logStore = LogStore()
 
+    private var availableIOS26: Bool {
+        if #available(iOS 26.0, *) {
+            true
+        } else {
+            false
+        }
+    }
+
     public var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack {
@@ -145,8 +153,13 @@ public struct LogdogScreen: View {
         }
         .searchable(
             text: $query,
-            placement: .navigationBarDrawer(displayMode: .always)
+            placement: availableIOS26 ? .automatic : .navigationBarDrawer(displayMode: .always)
         )
+        .toolbar {
+            if #available(iOS 26.0, *) {
+                DefaultToolbarItem(kind: .search, placement: .bottomBar)
+            }
+        }
         .task {
             isLoading = true
             do {
